@@ -1,11 +1,14 @@
 class Solution:
     def intersect(self, nums1: list[int], nums2: list[int]) -> list[int]:
-        result = []
+        result=[]
 
-        for i in nums1:
-            if i in nums2:
+        common=set(nums1) & set(nums2) #{9,4}
+
+        for i in common:
+            count1=nums1.count(i)
+            count2=nums2.count(i)
+
+            for j in range(min(count1,count2)):
                 result.append(i)
-                nums2.remove(i)
-
         return result
                 
