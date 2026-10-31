@@ -4,7 +4,7 @@ class Solution:
         for i in range(0,len(nums)):
             for j in range(i+1,len(nums)):
                 if target==nums[i]+nums[j]:
-                    lst.append(i)
-                    lst.append(j)
+                    lst.extend([i,j])
+
         return lst
         
